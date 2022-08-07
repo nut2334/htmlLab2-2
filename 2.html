@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .border{
+                border-style: solid;
+                border-color: white black black black;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="form-echo.php" method="get">
+        <fieldset class="border">
+        <h1>แบบฟอร์มจองทัวร์</h1>
+        <fieldset>
+            <legend>
+                ข้อมูลทั่วไป
+            </legend>
+            ชื่อ-สกุล:<br>
+            <input type="text" placeholder="กรอกชื่อ-สกุล" required>*<br>
+            Email:<br>
+            <input type="email" required>*<br>
+            โทรศัพท์:<br>
+            <input type="text" placeholder="+66" maxlength="10" 
+            pattern="[\d]{10}"
+            required>*<br>
+            ที่อยู่:<br>
+            <textarea></textarea><br>
+            รหัสไปรษณีย์:<input type="text" maxlength="5" size="5"
+            pattern="[\d]{5}"><br>
+            รูปผู้จอง:<input type="file">
+        </fieldset>
+        <fieldset>
+            <legend>
+                ข้อมูลเข้าสู่ระบบ
+            </legend>
+            Username:<br>
+            <input type="text"
+                pattern="[\w_]{8,}"
+            ><br>
+            <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ_ตั้งแต่8 ตัวขึ้นไป</i><br>
+            Password:<br>
+            <input type="text"
+                pattern="[\w_]{8,}"
+            ><br>
+            <i>ประกอบด้วยอักขระอะไรก็ได้8 ตัวขึ้นไป</i><br>
+        </fieldset>
+        <fieldset>
+            <legend>
+                ข้อมูลทัวร์ที่ต้องการ
+            </legend>
+            แพคเก็จทัวร์:<select>
+                <option>--select--</option>
+                <option>Switzerland</option>
+                <option>Denmark</option>
+                <option>Finland</option>
+                <option>Norway</option>
+                <option>Sweden</option>
+            </select><br>
+            วันที่เดินทาง:<input type="date"><br>
+            จำนวนผู้เดินทาง:<input type="number" 
+            maxlength="2" size="2" min="1" max="10"
+            ><br>
+            เน้นการท่องเที่ยวแบบใด?<br>
+            <input type="checkbox">
+            <label>ชอปปิ้ง</label><br>
+            <input type="checkbox">
+            <label>ธรรมชาติ</label><br>
+            <input type="checkbox">
+            <label>ทะเล</label>
+        </fieldset>
+        ยอมรับเงื่อนไขและข้อตกลง
+        <input type="radio" checked name="1">
+        <label>I agree</label>
+        <input type="radio" name="1">
+        <label>I disagree</label>
+        <input type="submit" value="จอง">
+    </fieldset></form>
+    </body>
+</html>
